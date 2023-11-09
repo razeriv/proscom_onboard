@@ -7,5 +7,8 @@ export default defineNuxtConfig({
     '~/assets/css/containers.css',
     '~/assets/css/background.css',
   ],
-  modules: ["@nuxtjs/tailwindcss"]
+  modules: [
+      "@nuxtjs/tailwindcss",
+      'nuxt-headlessui'
+  ]
 })

@@ -5,10 +5,3 @@
     <NuxtPage />
   </div>
 </template>
-
-<style scoped>
-
-</style>
-<script setup lang="ts">
-import TopBar from "~/components/TopBar.vue";
-</script>
