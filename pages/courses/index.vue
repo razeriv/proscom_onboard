@@ -1,5 +1,16 @@
 <script setup lang="ts">
 const selectedDep = useDepartmentFilter()
+
+const client = useSupabaseClient()
+const { data: departments } = await useAsyncData('department', async () => {
+  const { data } = await client.from('department').select()
+  return data
+})
+
+const { data: courses } = await useAsyncData('course', async () => {
+  const { data } = await client.from('course').select()
+  return data
+})
 </script>
 
 <template>
@@ -9,11 +20,11 @@ const selectedDep = useDepartmentFilter()
   />
   <div class="flex gap-6">
     <CourseCard
-        v-for="course in courses.filter(({ department }) => department === selectedDep.department.id)"
+        v-for="course in courses.filter(({ department_id }) => department_id === selectedDep.department.id)"
         :title="course.title"
         :description="course.description"
-        link="1"
-        :is-completed="course.isCompleted"
+        :duration="course.duration"
+        :content_url="course.content_url"
     />
   </div>
 </template>

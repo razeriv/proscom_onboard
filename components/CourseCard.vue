@@ -2,8 +2,9 @@
 const props = defineProps({
   title: String,
   description: String,
-  link: String,
-  isCompleted: Boolean
+  isCompleted: Boolean,
+  duration: Number,
+  content_url: String,
 })
 </script>
 
@@ -13,6 +14,11 @@ const props = defineProps({
   ]">
     <h3 class="text-3xl font-bold">{{props.title}}</h3>
     <p class="opacity-70">{{props.description}}</p>
+    <a :href="props.content_url">Ссылка на курс</a>
+    <Dialog
+      :preview-url="props.content_url"
+      :title="props.title"
+    />
   </div>
 </template>
 

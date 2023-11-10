@@ -13,7 +13,6 @@ const props = defineProps({
   }
 })
 
-const selected = ref(props.selectFrom[0]);
 const current = useDepartmentFilter();
 </script>
 
@@ -42,8 +41,8 @@ const current = useDepartmentFilter();
           >
             <ListboxOption
                 v-slot="{ active, selected }"
-                v-for="item in selectFrom"
-                :key="item.title"
+                v-for="item in props.selectFrom"
+                :key="item.id"
                 :value="item"
                 as="template"
             >
