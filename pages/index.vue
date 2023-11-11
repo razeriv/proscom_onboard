@@ -6,7 +6,7 @@ const user = useSupabaseUser()
 const userDataStore = useUserDataStore()
 
 const {data: userData} = await useAsyncData('user', async () => {
-  const {data} = await client.from('user').select().eq('user_uuid', user.value?.id).single()
+  const {data} = await client.from('user').select("*, depatment_id(*)").eq('id', user.value?.id).single()
   return data
 })
 
@@ -15,7 +15,7 @@ userDataStore.user = userData
 
 <template>
   <div class="page">
-    <h1></h1>
+    <h1>hi!</h1>
   </div>
 </template>
 

@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {useUserDataStore} from "~/composables/userDataState";
-
 const user = useSupabaseUser()
-const client = useSupabaseClient()
 
 watch(user, async () => {
   if (user.value) {

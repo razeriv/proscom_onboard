@@ -21,6 +21,7 @@ const { data: courses } = await useAsyncData('course', async () => {
   <div class="flex gap-6">
     <CourseCard
         v-for="course in courses.filter(({ department_id }) => department_id === selectedDep.department.id)"
+        :id="course.id"
         :title="course.title"
         :description="course.description"
         :duration="course.duration"
