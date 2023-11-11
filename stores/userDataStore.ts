@@ -1,14 +1,16 @@
 import { defineStore } from 'pinia'
 
-export const useUserDataStore = defineStore('userDataStore', {
+export const useUserDataStore = defineStore('user-data-store', {
     // arrow function recommended for full type inference
     state: () => {
         return {
             // all these properties will have their type inferred automatically
-            user: {}
+            firstName: "",
+            lastName: "",
+            department: {},
         }
     },
     persist: {
-        storage: persistedState.localStorage,
+        storage: persistedState.sessionStorage,
     }
 })
