@@ -1,11 +1,16 @@
 <script setup lang="ts">
+import {useUserDataStore} from "~/composables/userDataState";
+
 const user = useSupabaseUser()
-watch(user, () => {
+const client = useSupabaseClient()
+
+watch(user, async () => {
   if (user.value) {
-    return navigateTo('/')
+    return navigateTo('/');
   }
 }, { immediate: true })
+
 </script>
 <template>
-  <div>Waiting for login...</div>
+  <div>Ожидаем входа...</div>
 </template>

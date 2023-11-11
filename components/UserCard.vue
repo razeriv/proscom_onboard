@@ -1,10 +1,11 @@
 <script setup lang="ts">
-
+import {useUserDataStore} from "~/composables/userDataState";
+const userDataStore = useUserDataStore()
 </script>
 
 <template>
   <div class="flex flex-col gap-3 card">
-    <h2 class="text-3xl font-black">Дрочеслав Семенович</h2>
+    <h2 class="text-3xl font-black">{{userDataStore.user.name}}</h2>
     <div class="flex gap-4">
       <IconLink
           navigate-to="/"

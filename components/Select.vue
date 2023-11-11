@@ -8,8 +8,8 @@ import {
 
 const props = defineProps({
   selectFrom: {
-    type: [],
-    default: []
+    type: Array,
+    default: [{}]
   }
 })
 

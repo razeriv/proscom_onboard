@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     modules: [
       "@nuxtjs/tailwindcss",
       'nuxt-headlessui',
-      '@nuxtjs/supabase'
+      '@nuxtjs/supabase',
+      '@pinia-plugin-persistedstate/nuxt',
+      '@pinia/nuxt',
   ],
 })
