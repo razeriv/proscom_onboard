@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useUserDataStore} from "~/composables/userDataState";
+import {useUserDataStore} from "~/stores/userDataStore";
 const client = useSupabaseClient()
 const user = useSupabaseUser()
 
@@ -10,12 +10,14 @@ const {data: userData} = await useAsyncData('user', async () => {
   return data
 })
 
-userDataStore.user = userData
+userDataStore.firstName = userData.value.first_name
+userDataStore.lastName = userData.value.last_name
+userDataStore.department = userData.value.depatment_id
 </script>
 
 <template>
   <div class="page">
-    <h1>hi!</h1>
+    <h1></h1>
   </div>
 </template>
 
