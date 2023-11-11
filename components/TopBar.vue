@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const client = useSupabaseClient()
+const userDataStore = useUserDataStore()
 </script>
 
 <template>
@@ -11,6 +12,7 @@ const client = useSupabaseClient()
         <li><NuxtLink to="/profile">Тесты</NuxtLink></li>
         <li><button @click="() => {
           client.auth.signOut()
+          userDataStore.$reset()
           return navigateTo('/login')
         }">
           Выйти
