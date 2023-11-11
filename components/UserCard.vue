@@ -5,7 +5,7 @@ const userDataStore = useUserDataStore()
 
 <template>
   <div class="flex flex-col gap-3 card">
-    <h2 class="text-3xl font-black">{{userDataStore.user.name}}</h2>
+    <h2 class="text-3xl font-black">{{userDataStore.user.first_name + " " + userDataStore.user.last_name}}</h2>
     <div class="flex gap-4">
       <IconLink
           navigate-to="/"
